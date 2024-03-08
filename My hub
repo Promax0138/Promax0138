@@ -1,0 +1,43 @@
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer.PlayerGui
+
+-- Create the GUI frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 200, 0, 100)
+frame.Position = UDim2.new(0.5, -100, 0.5, -50)
+frame.BackgroundColor3 = Color3.new(1, 1, 1)
+frame.Parent = screenGui
+
+-- Create the highlight players button
+local highlightButton = Instance.new("TextButton")
+highlightButton.Size = UDim2.new(0, 150, 0, 40)
+highlightButton.Position = UDim2.new(0.5, -75, 0.25, -20)
+highlightButton.Text = "Highlight Players"
+highlightButton.Parent = frame
+
+-- Create the walk tool button
+local walkToolButton = Instance.new("TextButton")
+walkToolButton.Size = UDim2.new(0, 150, 0, 40)
+walkToolButton.Position = UDim2.new(0.5, -75, 0.75, -20)
+walkToolButton.Text = "Give Walk Tool"
+walkToolButton.Parent = frame
+
+-- Function to highlight players
+local function highlightPlayers()
+    for _, player in ipairs(game.Players:GetPlayers()) do
+        -- Apply highlight effect to player's character
+        -- You can customize this part based on your preference
+    end
+end
+
+-- Function to give walk tool
+local function giveWalkTool()
+    local player = game.Players.LocalPlayer
+    local backpack = player:WaitForChild("Backpack")
+    local walkTool = game.ServerStorage.WalkTool:Clone() -- Assuming you have a Walk Tool in Server Storage
+    walkTool.Parent = backpack
+end
+
+-- Connect the button click events
+highlightButton.MouseButton1Click:Connect(highlightPlayers)
+walkToolButton.MouseButton1Click:Connect(giveWalkTool)
