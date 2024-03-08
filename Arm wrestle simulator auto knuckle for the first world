@@ -1,0 +1,39 @@
+getgenv().collect= true
+while wait() do
+local args = {
+    [1] = "1",
+    [2] = "Tier1"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PunchBagService.RE.onGiveStats:FireServer(unpack(args))
+local args = {
+    [1] = "1",
+    [2] = "Tier2"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PunchBagService.RE.onGiveStats:FireServer(unpack(args))
+local args = {
+    [1] = "1",
+    [2] = "Tier3"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PunchBagService.RE.onGiveStats:FireServer(unpack(args))
+local args = {
+    [1] = "1",
+    [2] = "Tier4"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PunchBagService.RE.onGiveStats:FireServer(unpack(args))
+local args = {
+    [1] = "1",
+    [2] = "Tier5"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PunchBagService.RE.onGiveStats:FireServer(unpack(args))
+local args = {
+    [1] = "1",
+    [2] = "Tier6"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.PunchBagService.RE.onGiveStats:FireServer(unpack(args))
+end
