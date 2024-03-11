@@ -1,43 +1,139 @@
-local screenGui = Instance.new("ScreenGui")
-screenGui.Parent = game.Players.LocalPlayer.PlayerGui
+local gui = Instance.new("ScreenGui")
+gui.Name = "ProMax Gui"
+gui.Parent = game.Players.LocalPlayer.PlayerGui
 
--- Create the GUI frame
 local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 200, 0, 100)
-frame.Position = UDim2.new(0.5, -100, 0.5, -50)
-frame.BackgroundColor3 = Color3.new(1, 1, 1)
-frame.Parent = screenGui
+frame.Name = "MenuFrame"
+frame.Size = UDim2.new(0, 200, 0, 300)
+frame.Position = UDim2.new(0.5, -100, 0.5, -150)
+frame.BackgroundTransparency = 0.5
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.Parent = gui
+local title = Instance.new("TextLabel")
+title.Name = "TitleLabel"
+title.Text = "ProMax Gui"
+title.Size = UDim2.new(1, 0, 0, 50)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.BackgroundColor3 = Color3.new(0, 0, 0)
+title.TextColor3 = Color3.new(1, 1, 1)
+title.Font = Enum.Font.SourceSansBold
+title.FontSize = Enum.FontSize.Size24
+title.Parent = frame
 
--- Create the highlight players button
-local highlightButton = Instance.new("TextButton")
-highlightButton.Size = UDim2.new(0, 150, 0, 40)
-highlightButton.Position = UDim2.new(0.5, -75, 0.25, -20)
-highlightButton.Text = "Highlight Players"
-highlightButton.Parent = frame
+local closeButton = Instance.new("TextButton")
+closeButton.Name = "CloseButton"
+closeButton.Text = "Close"
+closeButton.Size = UDim2.new(0, 100, 0, 50)
+closeButton.Position = UDim2.new(0.5, -50, 1, -50)
+closeButton.BackgroundColor3 = Color3.new(0, 0, 0)
+closeButton.TextColor3 = Color3.new(1, 1, 1)
+closeButton.Font = Enum.Font.SourceSans
+closeButton.FontSize = Enum.FontSize.Size18
+closeButton.Parent = frame
 
--- Create the walk tool button
-local walkToolButton = Instance.new("TextButton")
-walkToolButton.Size = UDim2.new(0, 150, 0, 40)
-walkToolButton.Position = UDim2.new(0.5, -75, 0.75, -20)
-walkToolButton.Text = "Give Walk Tool"
-walkToolButton.Parent = frame
+local function closeMenu()
+    gui:Destroy()
+end
 
--- Function to highlight players
-local function highlightPlayers()
-    for _, player in ipairs(game.Players:GetPlayers()) do
-        -- Apply highlight effect to player's character
-        -- You can customize this part based on your preference
+closeButton.MouseButton1Click:Connect(closeMenu)
+
+local highlighterButton = Instance.new("TextButton")
+highlighterButton.Name = "HighlighterButton"
+highlighterButton.Text = "Highlighter"
+highlighterButton.Size = UDim2.new(0, 100, 0, 50)
+highlighterButton.Position = UDim2.new(0.5, -50, 0, 100)
+highlighterButton.BackgroundColor3 = Color3.new(0, 0, 0)
+highlighterButton.TextColor3 = Color3.new(1, 1, 1)
+highlighterButton.Font = Enum.Font.SourceSans
+highlighterButton.FontSize = Enum.FontSize.Size18
+highlighterButton.Parent = frame
+
+local function highlighterClicked()
+    local Players = game:GetService("Players"):GetChildren()
+
+local RunService = game:GetService("RunService")
+
+local highlight = Instance.new("Highlight")
+
+highlight.Name = "Highlight"
+
+
+
+for i, v in pairs(Players) do
+
+    repeat wait() until v.Character
+
+    if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+
+        local highlightClone = highlight:Clone()
+
+        highlightClone.Adornee = v.Character
+
+        highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+
+        highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+
+        highlightClone.Name = "Highlight"
+
     end
+
 end
 
--- Function to give walk tool
-local function giveWalkTool()
-    local player = game.Players.LocalPlayer
-    local backpack = player:WaitForChild("Backpack")
-    local walkTool = game.ServerStorage.WalkTool:Clone() -- Assuming you have a Walk Tool in Server Storage
-    walkTool.Parent = backpack
+
+
+game.Players.PlayerAdded:Connect(function(player)
+
+    repeat wait() until player.Character
+
+    if not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+
+        local highlightClone = highlight:Clone()
+
+        highlightClone.Adornee = player.Character
+
+        highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
+
+        highlightClone.Name = "Highlight"
+
+    end
+
+end)
+
+
+
+game.Players.PlayerRemoving:Connect(function(playerRemoved)
+
+    playerRemoved.Character:FindFirstChild("HumanoidRootPart").Highlight:Destroy()
+
+end)
+
+
+
+RunService.Heartbeat:Connect(function()
+
+    for i, v in pairs(Players) do
+
+        repeat wait() until v.Character
+
+        if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+
+            local highlightClone = highlight:Clone()
+
+            highlightClone.Adornee = v.Character
+
+            highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+
+            highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+
+            highlightClone.Name = "Highlight"
+
+            task.wait()
+
+        end
+
 end
 
--- Connect the button click events
-highlightButton.MouseButton1Click:Connect(highlightPlayers)
-walkToolButton.MouseButton1Click:Connect(giveWalkTool)
+end)
+end
+
+highlighterButton.MouseButton1Click:Connect(highlighterClicked)
