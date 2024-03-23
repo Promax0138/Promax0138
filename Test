@@ -1,0 +1,98 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "Promax Gui"
+gui.Parent = game.CoreGui
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.BorderColor3 = Color3.new(0, 0, 0)
+Frame.BorderSizePixel = 1
+Frame.Active = true
+Frame.BackgroundTransparency = 0 
+Frame.Draggable = true
+Frame.Parent = gui
+
+local toggleState = false
+
+local ToggleButton = Instance.new("TextButton")
+ToggleButton.Size = UDim2.new(0.2, 0, 0.1, 0)
+ToggleButton.Position = UDim2.new(0.4, 0, 0.7, 0)
+ToggleButton.BackgroundColor3 = Color3.new(0, 0.5, 1)
+ToggleButton.BorderColor3 = Color3.new(0, 0, 0)
+ToggleButton.BorderSizePixel = 1
+ToggleButton.Text = "toggle farm"
+ToggleButton.Parent = Frame
+
+ToggleButton.MouseButton1Click:Connect(function()
+    toggleState = not toggleState
+    if toggleState then
+        ToggleButton.Text = "toggle farm on"
+local toggle = true
+while toggle do
+task.wait(3)
+local teleport_table = {
+    location1 = Vector3.new(-10.3181286, 119.998016, -964.120239, 0.998805761, -6.20484109e-10, -0.0488579497, 3.12669179e-09, 1, 5.12193736e-08, 0.0488579497, -5.13109697e-08, 0.998805761)
+}
+
+local tween_s = game:GetService("TweenService")
+local tweeninfo = TweenInfo.new(4.4,Enum.EasingStyle.Linear)
+
+local lp = game.Players.LocalPlayer
+
+function win_teleport(v)
+    if lp.Character and
+   lp.Character:FindFirstChild('HumanoidRootPart') then
+        local cf = CFrame.new(v)
+        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+        a:Play()
+    end
+end
+
+win_teleport(teleport_table.location1)
+task.wait(4.5)
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = CFrame.new(-9.77023029, 39.6512947, -1020.92383, -0.999229014, 0.00188827037, -0.0392147042, -8.39696368e-11, 0.998842716, 0.0480963774, 0.0392601416, 0.0480592959, -0.998072624)
+task.wait(2.9)
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = CFrame.new(-8.97146702, 123.013748, 934.401245, 0.999955654, -8.16865153e-08, 0.00941667054, 8.17539174e-08, 1, -6.77247991e-09, -0.00941667054, 7.54202922e-09, 0.999955654)
+if not toggle then
+      break
+   end
+end
+    else
+        ToggleButton.Text = "toggle farm off"
+local toggle = false
+while toggle do
+task.wait(3)
+local teleport_table = {
+    location1 = Vector3.new(-10.3181286, 119.998016, -964.120239, 0.998805761, -6.20484109e-10, -0.0488579497, 3.12669179e-09, 1, 5.12193736e-08, 0.0488579497, -5.13109697e-08, 0.998805761)
+}
+
+local tween_s = game:GetService("TweenService")
+local tweeninfo = TweenInfo.new(4.4,Enum.EasingStyle.Linear)
+
+local lp = game.Players.LocalPlayer
+
+function win_teleport(v)
+    if lp.Character and
+   lp.Character:FindFirstChild('HumanoidRootPart') then
+        local cf = CFrame.new(v)
+        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+        a:Play()
+    end
+end
+
+win_teleport(teleport_table.location1)
+task.wait(4.5)
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = CFrame.new(-9.77023029, 39.6512947, -1020.92383, -0.999229014, 0.00188827037, -0.0392147042, -8.39696368e-11, 0.998842716, 0.0480963774, 0.0392601416, 0.0480592959, -0.998072624)
+task.wait(2.9)
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = CFrame.new(-8.97146702, 123.013748, 934.401245, 0.999955654, -8.16865153e-08, 0.00941667054, 8.17539174e-08, 1, -6.77247991e-09, -0.00941667054, 7.54202922e-09, 0.999955654)
+if not toggle then
+      break
+   end
+end
+    end
+end)
