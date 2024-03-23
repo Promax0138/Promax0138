@@ -1,0 +1,42 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "Promax Gui"
+gui.Parent = game.CoreGui
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.BorderColor3 = Color3.new(0, 0, 0)
+Frame.BorderSizePixel = 1
+Frame.Active = true
+Frame.BackgroundTransparency = 0 
+Frame.Draggable = true
+Frame.Parent = gui
+
+local toggleState = false
+
+local ToggleButton = Instance.new("TextButton")
+ToggleButton.Size = UDim2.new(0.2, 0, 0.1, 0)
+ToggleButton.Position = UDim2.new(0.4, 0, 0.7, 0)
+ToggleButton.BackgroundColor3 = Color3.new(0, 0.5, 1)
+ToggleButton.BorderColor3 = Color3.new(0, 0, 0)
+ToggleButton.BorderSizePixel = 1
+ToggleButton.Text = "toggle farm"
+ToggleButton.Parent = Frame
+
+ToggleButton.MouseButton1Click:Connect(function()
+    toggleState = not toggleState
+    if toggleState then
+        ToggleButton.Text = "toggle farm on"
+        local toggle = true
+        while toggle do
+            task.wait(3)
+            local teleport_table = {
+                location1 = Vector3.new(-10.3181286, 119.998016, -964.120239, 0.998805761, -6.20484109e-10, -0.0488579497, 3.12669179e-09, 1, 5.12193736e-08, 0.0488579497, -5.13109697e-08)
+            }
+        end
+    else
+        ToggleButton.Text = "toggle farm"
+        toggle = false
+    end
+end)
