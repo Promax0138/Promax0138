@@ -1,10 +1,8 @@
---game link: https://www.roblox.com/games/7993293100/Tsunami-Game
-
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("ZEROS HUB", "Midnight")
 local Tab = Window:NewTab("Farm")
 local Section = Tab:NewSection("Farm")
-Section:NewButton("Gold 4", "it simply gives u 4 gold per click do not spam", function()
+Section:NewButton("Gold 4", "it simply gets bananas and sell him do not spam", function()
     local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = CFrame.new(-187.026337, -1966.3446, -20.0445061, -0.0519060977, 2.44600002e-08, 0.998651981, -6.59566837e-08, 1, -2.79211942e-08, -0.998651981, -6.73170533e-08, -0.0519060977)
 task.wait(4)
@@ -31,7 +29,10 @@ local args = {
 
 game:GetService("ReplicatedStorage").RemoteEvents.Gui.AlienShopEvent:FireServer(unpack(args))
 end)
-Section:NewButton("win", "simply if clicked gives u a win", function()
+Section:NewButton("win", "it simply brings u to the end do not spam", function()
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = CFrame.new(-8.97146702, 123.013748, 934.401245, 0.999955654, -8.16865153e-08, 0.00941667054, 8.17539174e-08, 1, -6.77247991e-09, -0.00941667054, 7.54202922e-09, 0.999955654)
+task.wait(1)
     local teleport_table = {
     location1 = Vector3.new(-10.3181286, 119.998016, -964.120239, 0.998805761, -6.20484109e-10, -0.0488579497, 3.12669179e-09, 1, 5.12193736e-08, 0.0488579497, -5.13109697e-08, 0.998805761)
 }
@@ -58,7 +59,7 @@ task.wait(2.9)
 local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = CFrame.new(-8.97146702, 123.013748, 934.401245, 0.999955654, -8.16865153e-08, 0.00941667054, 8.17539174e-08, 1, -6.77247991e-09, -0.00941667054, 7.54202922e-09, 0.999955654)
 end)
-Section:NewButton("troll :)", "this one allows u to kill peopl", function()
+Section:NewButton("spawn tsunami", "this one spawns a tsunami", function()
     local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = CFrame.new(-22.5097904, 123.528, 982.667847, 0.0619811937, 5.38871916e-08, -0.998077333, -4.65371652e-09, 1, 5.37020028e-08, 0.998077333, 1.31625477e-09, 0.0619811937)
 task.wait(0.2)
