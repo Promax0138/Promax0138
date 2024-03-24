@@ -7,12 +7,13 @@ local Section = Tab:NewSection("Farm")
 Section:NewButton("Gold 4", "it simply gives u 4 gold per click do not spam", function()
     local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = CFrame.new(-187.026337, -1966.3446, -20.0445061, -0.0519060977, 2.44600002e-08, 0.998651981, -6.59566837e-08, 1, -2.79211942e-08, -0.998651981, -6.73170533e-08, -0.0519060977)
-task.wait(3)
+task.wait(4)
 local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = CFrame.new(-187.026337, -1966.3446, -20.0445061, -0.0519060977, 2.44600002e-08, 0.998651981, -6.59566837e-08, 1, -2.79211942e-08, -0.998651981, -6.73170533e-08, -0.0519060977)
-task.wait(3)
+task.wait(4)
 local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = CFrame.new(173.713943, -1974.44019, -17.0912476, -0.999841332, 2.13044746e-08, 0.0178123359, 2.08730224e-08, 1, -2.44079743e-08, -0.0178123359, -2.4032305e-08, -0.999841332)
+task.wait(4)
 local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = CFrame.new(173.713943, -1974.44019, -17.0912476, -0.999841332, 2.13044746e-08, 0.0178123359, 2.08730224e-08, 1, -2.44079743e-08, -0.0178123359, -2.4032305e-08, -0.999841332)
 task.wait(4)
